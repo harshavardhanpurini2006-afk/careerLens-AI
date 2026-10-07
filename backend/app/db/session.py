@@ -7,8 +7,10 @@ logger = logging.getLogger("careerlens.db")
 
 # Create engine
 database_url = settings.DATABASE_URL
-connect_args = {}
+if database_url.startswith("sqlite+aiosqlite://"):
+    database_url = database_url.replace("sqlite+aiosqlite://", "sqlite://")
 
+connect_args = {}
 if database_url.startswith("sqlite"):
     connect_args = {"check_same_thread": False}
 

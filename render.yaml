@@ -19,4 +19,4 @@ services:
       - key: FRONTEND_ORIGIN
         value: "*"
       - key: DATABASE_URL
-        value: sqlite+aiosqlite:///./careerlens.db
+        value: sqlite:///./careerlens.db

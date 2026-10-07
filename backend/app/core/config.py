@@ -27,9 +27,9 @@ class Settings(BaseSettings):
     # Database: Supports MySQL (via .env), PostgreSQL, or SQLite fallback
     DATABASE_URL: str = os.getenv(
         "DATABASE_URL",
-        "sqlite+aiosqlite:///./careerlens.db"
+        "sqlite:///./careerlens.db"
     )
-    SQLITE_FALLBACK_URL: str = "sqlite+aiosqlite:///./careerlens.db"
+    SQLITE_FALLBACK_URL: str = "sqlite:///./careerlens.db"
 
     # AI / LLM Configuration
     LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "gemini")
